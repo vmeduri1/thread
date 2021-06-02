@@ -1,15 +1,26 @@
 from .db import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from .match import Match
+from .message import Message
 
 class User(db.Model, UserMixin):
   __tablename__ = 'users'
 
   id = db.Column(db.Integer, primary_key = True)
+  f_name = db.Column(db.String(255), nullable = False)
+  l_name = db.Column(db.String(255))
   username = db.Column(db.String(40), nullable = False, unique = True)
+  profile_pic = db.Column(db.String(300))
+  phone_number = db.Column(db.Numeric(15))
   email = db.Column(db.String(255), nullable = False, unique = True)
   hashed_password = db.Column(db.String(255), nullable = False)
 
+  matches_a = db.relationship("Match", back_populates="users_a", primaryjoin=(id==Match.match_a))
+  matches_b = db.relationship("Match", back_populates="users_b", primaryjoin=(id==Match.match_b))
+
+  user_senders = db.relationship("Message", back_populates="senders", primaryjoin=(id==Message.sender_id))
+  user_recipients = db.relationship("Message", back_populates="recipients", primaryjoin=(id==Message.recipient_id))
 
   @property
   def password(self):
@@ -28,6 +39,10 @@ class User(db.Model, UserMixin):
   def to_dict(self):
     return {
       "id": self.id,
+      "f_name": self.f_name,
+      "l_name": self.l_name,
       "username": self.username,
+      "profile_pic": self.profile_pic,
+      "phone_number": self.phone_number,
       "email": self.email
     }

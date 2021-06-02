@@ -21,7 +21,7 @@ function TinderCards() {
         // this is where the code runs..
 
         // this will run ONCE when the compoonent loads, and never again
-    }, [people])
+    }, [])
 
     return (
         <div>
