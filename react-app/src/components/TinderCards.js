@@ -16,6 +16,7 @@ function TinderCards() {
         }
     ]);
 
+
     // Piece of codde which runs based on a condition
     useEffect(() => {
         // this is where the code runs..

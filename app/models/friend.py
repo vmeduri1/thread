@@ -1,4 +1,4 @@
-from .db import ddb
+from .db import db
 
 friends = db.Table(
     "friend",
