@@ -33,9 +33,6 @@ function App() {
       <Router>
         <div className="App">
         <Switch>
-          <Route path="/">
-            <SplashPage />
-          </Route>
             <Route path="/chat">
               <Header />
               <h1>I am the chat page</h1>
@@ -43,6 +40,9 @@ function App() {
             <Route path="/tinder-cards">
               <Header />
               <TinderCards />
+            </Route>
+            <Route path="/">
+              <SplashPage />
             </Route>
         </Switch>
         </div>
