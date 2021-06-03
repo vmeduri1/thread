@@ -8,8 +8,8 @@ class Match(db.Model):
     match_b = db.Column(db.Integer, db.ForeignKey("users.id"))
     isSeen = db.Column(db.Boolean)
 
-    users_a = db.relationship("User", back_populates="matches_a")
-    users_b = db.relationship("User", back_populates="matches_b")
+    users_a = db.relationship("User", foreign_keys=[match_a], back_populates="matches_a")
+    users_b = db.relationship("User", foreign_keys=[match_b], back_populates="matches_b")
 
     def to_dict(self):
         return {

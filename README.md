@@ -94,6 +94,7 @@ This is the backend for the Flask React project.
    heroku run -a {NAME_OF_HEROKU_APP} flask db upgrade
    heroku run -a project-second-degree flask db upgrade
    heroku run -a {NAME_OF_HEROKU_APP} flask seed all
+   heroku run -a project-second-degree flask seed undo
    heroku run -a project-second-degree flask seed all
    ```
 

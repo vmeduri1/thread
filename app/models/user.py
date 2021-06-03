@@ -14,7 +14,7 @@ class User(db.Model, UserMixin):
   profile_pic = db.Column(db.String(300))
   phone_number = db.Column(db.Numeric(15))
   email = db.Column(db.String(255), nullable = False, unique = True)
-  hashed_password = db.Column(db.String(255), nullable = False)
+  hashed_password = db.Column(db.String(255))
 
   matches_a = db.relationship("Match", back_populates="users_a", primaryjoin=(id==Match.match_a))
   matches_b = db.relationship("Match", back_populates="users_b", primaryjoin=(id==Match.match_b))
