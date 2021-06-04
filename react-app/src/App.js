@@ -10,6 +10,7 @@ import User from "./components/User";
 import { authenticate } from "./store/session";
 import Header from './components/Header';
 import TinderCards from './components/TinderCards';
+import Matches from './components/Matches';
 import SwipeButtons from './components/SwipeButtons'
 
 function App() {
@@ -31,13 +32,15 @@ function App() {
   return (
     <>
         <div className="App">
-        <Header />
         <Router>
           <Switch>
-            <Route path="/chat">
-              <h1>I am the chat page</h1>
+            <Route path="/matches">
+              <Header />
+              <Matches />
+              <h1>I am the matches page</h1>
             </Route>
             <Route path="/">
+              <Header />
               <TinderCards />
               <SwipeButtons />
             </Route>
