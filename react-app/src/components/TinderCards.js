@@ -1,7 +1,10 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import TinderCard from 'react-tinder-card';
 import './TinderCard.css';
+import { getAllUsers } from '../store/users';
+
 
 
 function TinderCards() {
@@ -16,6 +19,13 @@ function TinderCards() {
         }
     ]);
 
+    const dispatch = useDispatch();
+    const sessionUser = useSelector((state) => state.session.user)
+    const allUsers = useSelector((state) => Object.values(state.users));
+    console.log(allUsers);
+    // const allUsersKeyed = Object.values(allUsers[0])
+
+
 
     // Piece of codde which runs based on a condition
     useEffect(() => {
@@ -24,21 +34,27 @@ function TinderCards() {
         // this will run ONCE when the compoonent loads, and never again
     }, [])
 
+    useEffect(() => {
+        if (sessionUser) {
+            dispatch(getAllUsers());
+        }
+    }, [dispatch, sessionUser])
+
     return (
         <div>
             <h1>Tinder cards</h1>
 
             <div className='tinderCards__cardContainer'>
-                {people.map(person => (
+                {allUsers[0]?.users.map((person, idx) => (
                     <TinderCard
                         className='swipe'
-                        key={person.name}
+                        key={idx}
                         preventSwipe={['up', 'down']}>
                         <div
-                            style={{ backgroundImage: `url(${person.url})`}}
+                            style={{ backgroundImage: `url(${person.profile_pic})`}}
                             className='card'
                         >
-                            <h3>{person.name}</h3>
+                            <h3>{person.username}</h3>
                         </div>
                     </TinderCard>
             ))}

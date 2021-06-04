@@ -2,6 +2,7 @@
 const SET_USER = "session/SET_USER";
 const REMOVE_USER = "session/REMOVE_USER";
 
+
 const setUser = (user) => ({
     type: SET_USER,
     payload: user
@@ -14,6 +15,7 @@ const removeUser = () => ({
 const initialState = { user: null };
 
 export const authenticate = () => async (dispatch) => {
+    console.log('here!')
     const response = await fetch('/api/auth/',{
       headers: {
         'Content-Type': 'application/json'
@@ -59,7 +61,8 @@ export const authenticate = () => async (dispatch) => {
   };
 
 
-  export const signUp = (username, email, password, f_name, l_name, profile_pic) => async (dispatch)  => {
+  export const signUp = ( username, email, password, f_name) => async (dispatch)  => {
+    console.log(username, email, f_name, password)
     const response = await fetch("/api/auth/signup", {
       method: "POST",
       headers: {
@@ -71,6 +74,7 @@ export const authenticate = () => async (dispatch) => {
         profile_pic,
         username,
         email,
+        f_name,
         password,
       }),
     });
