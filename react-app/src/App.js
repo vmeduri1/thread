@@ -10,6 +10,7 @@ import User from "./components/User";
 import { authenticate } from "./store/session";
 import Header from './components/Header';
 import TinderCards from './components/TinderCards';
+import SwipeButtons from './components/SwipeButtons'
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -38,6 +39,7 @@ function App() {
             </Route>
             <Route path="/">
               <TinderCards />
+              <SwipeButtons />
             </Route>
           </Switch>
         </Router>
