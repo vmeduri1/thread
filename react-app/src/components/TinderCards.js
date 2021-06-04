@@ -22,6 +22,8 @@ function TinderCards() {
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user)
     const allUsers = useSelector((state) => Object.values(state.users));
+    console.log(allUsers);
+    // const allUsersKeyed = Object.values(allUsers[0])
 
 
 
@@ -43,7 +45,7 @@ function TinderCards() {
             <h1>Tinder cards</h1>
 
             <div className='tinderCards__cardContainer'>
-                {allUsers.map((person, idx) => (
+                {allUsers[0]?.users.map((person, idx) => (
                     <TinderCard
                         className='swipe'
                         key={idx}
