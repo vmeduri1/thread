@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import TinderCard from 'react-tinder-card';
+import SwipeButtons from '../components/SwipeButtons'
 import './TinderCard.css';
 import { getAllUsers } from '../store/users';
 
