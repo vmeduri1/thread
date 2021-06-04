@@ -24,6 +24,26 @@ def seed_users():
 
     db.session.add(steveJobs)
 
+    whitneyHouston = User(username='Whitney', email='whitney@gmail.com', f_name='Whitney',
+                        profile_pic='https://dazedimg-dazedgroup.netdna-ssl.com/2435/azure/dazed-prod/1290/8/1298649.jpg')
+
+    db.session.add(whitneyHouston)
+
+    billieEilish = User(username='Billie', email='billie@gmail.com', f_name='Billie',
+                        profile_pic='https://static.billboard.com/files/media/Billie-Eilish-press-photo-2017-billboard-1548-768x433.jpg')
+
+    db.session.add(billieEilish)
+
+    duaLipa = User(username='Dua', email='dualipa@gmail.com', f_name='Dua',
+                profile_pic='https://yt3.ggpht.com/ytc/AAUvwnhDZXpXUoc7YNL7h7j6Y4o6lZnEPuWDy2lbuBO4NQ=s900-c-k-c0x00ffffff-no-rj')
+
+    db.session.add(duaLipa)
+
+    camilaCabello = User(username='Camila', email="camila@gmail.com", f_name='Camila',
+                    profile_pic='https://static.billboard.com/files/media/Camila-Cabello-press-by-Amanda-Charchian-2020-billboard-1548-compressed.jpg')
+
+    db.session.add(camilaCabello)
+
     db.session.commit()
 
 # Uses a raw SQL query to TRUNCATE the users table.
