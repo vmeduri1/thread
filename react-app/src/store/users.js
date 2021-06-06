@@ -20,7 +20,7 @@ export const getAllUsers = () => async (dispatch) => {
 
 export default function userReducer(state = {}, action) {
     switch (action.type) {
-        case 'FETCH_USERS' :
+        case 'FETCH_USERS':
             return {
                 ...state,
                 users: action.payload

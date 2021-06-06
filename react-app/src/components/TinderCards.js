@@ -2,8 +2,10 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import TinderCard from 'react-tinder-card';
-import './TinderCard.css';
+import SwipeButtons from '../components/SwipeButtons'
+import './TinderCards.css';
 import { getAllUsers } from '../store/users';
+import { addingSwipe } from '../store/matches';
 
 
 
@@ -24,7 +26,12 @@ function TinderCards() {
     const allUsers = useSelector((state) => Object.values(state.users));
     console.log(allUsers);
     // const allUsersKeyed = Object.values(allUsers[0])
-
+    const onSwipe = (direction, id) => {
+        console.log(`Swiped ${direction} for ${id}`);
+        if (direction === 'right') {
+            dispatch(addingSwipe(id))
+        }
+    }
 
 
     // Piece of codde which runs based on a condition
@@ -49,7 +56,9 @@ function TinderCards() {
                     <TinderCard
                         className='swipe'
                         key={idx}
-                        preventSwipe={['up', 'down']}>
+                        preventSwipe={['up', 'down']}
+                        onSwipe={(dir) => onSwipe(dir, person.id)}
+                    >
                         <div
                             style={{ backgroundImage: `url(${person.profile_pic})`}}
                             className='card'
@@ -57,7 +66,7 @@ function TinderCards() {
                             <h3>{person.username}</h3>
                         </div>
                     </TinderCard>
-            ))}
+                ))}
             </div>
 
         </div>

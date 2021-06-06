@@ -44,6 +44,16 @@ def seed_users():
 
     db.session.add(camilaCabello)
 
+    barackObama = User(username='Barack', email='barack@whitehouse.gov', f_name='Barry-O',
+                    profile_pic='https://static01.nyt.com/images/2021/06/03/opinion/03klein-lead/03klein-lead-jumbo-v2.jpg?quality=90&auto=webp')
+
+    db.session.add(barackObama)
+
+    sia = User(username='sia', email='sia@music.com', f_name='Sia',
+            profile_pic='https://images.toofab.com/image/07/o/2020/01/13/0718feb83731518da4892d3dcba227fb_md.jpg')
+
+    db.session.add(sia)
+
     db.session.commit()
 
 # Uses a raw SQL query to TRUNCATE the users table.
