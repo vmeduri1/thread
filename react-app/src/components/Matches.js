@@ -14,7 +14,7 @@ function Matches() {
     console.log(allUsers);
     console.log(allMatches);
 
-    const checkAllMatches = 
+    const checkAllMatches =
 
     useEffect(() => {
         if (sessionUser) {
@@ -33,7 +33,7 @@ function Matches() {
                             <div className="matches" key={idx}>
                                 {(match.users_b === user.id) ? <div>
                                     <img className="img-profile-pic" src={user.profile_pic} />
-                                    <div classNamee="user-details">
+                                    <div className="user-details">
                                         <h2>{user.f_name}</h2>
                                         <p>{user.username}</p>
                                     </div>

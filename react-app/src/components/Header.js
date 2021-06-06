@@ -11,9 +11,11 @@ function Header() {
         // BEM
         <div className='header'>
             <IconButton>
-                <PersonIcon className='header___icon' fontSize='large'/>
+                <Link to="/">
+                    <PersonIcon className='header___icon' fontSize='large'/>
+                </Link>
             </IconButton>
-            <Link to ="/">
+            <Link to ="/tinder-cards">
                 <img
                     className='header___logo'
                     src="https://cdn.designrush.com/uploads/inspirations/2354/crop_683_410__1513706350_604_tin.png"

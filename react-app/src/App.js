@@ -12,6 +12,7 @@ import Header from './components/Header';
 import TinderCards from './components/TinderCards';
 import Matches from './components/Matches';
 import SwipeButtons from './components/SwipeButtons'
+import SplashPage from './components/SplashPage';
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -33,29 +34,28 @@ function App() {
     <>
         <div className="App">
         <Router>
+          <Header />
           <Switch>
             <Route path="/matches">
-              <Header />
               <Matches />
               <h1>I am the matches page</h1>
             </Route>
-            <Route path="/">
-              <Header />
+            <Route path="/tinder-cards">
               <TinderCards />
               <SwipeButtons />
             </Route>
-          </Switch>
+            <Route path="/">
+              <SplashPage />
+            </Route>
+        </Switch>
         </Router>
-`
-          {/*   Tinder Cards   */}
-          {/*   Buttons below Tinder Cards  */}
-
-          {/*   Chats screen   */}
-          {/*   Individual Chat Screen   */}
         </div>
-      <Router>
+
+
+      {/* <Router>
         <NavBar />
         <Switch>
+          <Route path='/' exact={true}></Route>
           <Route path="/login" exact={true}>
             <LoginForm />
           </Route>
@@ -72,7 +72,7 @@ function App() {
             <h1>My Home Page</h1>
           </ProtectedRoute>
         </Switch>
-      </Router>
+      </Router> */}
     </>
 
   );

@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    color: white;
+    font-family: Helvetica;
+}
+
+.bg {
+    background-image: url('https://www.theuiaa.org/wp-content/uploads/2017/12/2018_banner.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+.header-name {
+    display: flex;
+    justify-content: center;
+}
