@@ -8,8 +8,8 @@ function SplashPage() {
         <>
             <div className='bg'>
                 <div className="header">
-                    <h1>Welcome to thread!</h1>
-                    <h2>The dating app for friends of friends</h2>
+                    <h1 className="header-name">Welcome to thread!</h1>
+                    <h2 className="header-saying">The dating app for friends of friends</h2>
                 </div>
             </div>
             <div>

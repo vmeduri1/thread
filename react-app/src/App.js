@@ -32,35 +32,27 @@ function App() {
 
   return (
     <>
-      <Router>
         <div className="App">
         <Router>
+          <Header />
           <Switch>
             <Route path="/matches">
-              <Header />
               <Matches />
               <h1>I am the matches page</h1>
             </Route>
             <Route path="/tinder-cards">
-              <Header />
               <TinderCards />
               <SwipeButtons />
             </Route>
             <Route path="/">
-              <Header />
               <SplashPage />
             </Route>
         </Switch>
         </Router>
         </div>
-      </Router>
 
-          {/*   Tinder Cards   */}
-          {/*   Buttons below Tinder Cards  */}
 
-          {/*   Chats screen   */}
-          {/*   Individual Chat Screen   */}
-      <Router>
+      {/* <Router>
         <NavBar />
         <Switch>
           <Route path='/' exact={true}></Route>
@@ -80,7 +72,7 @@ function App() {
             <h1>My Home Page</h1>
           </ProtectedRoute>
         </Switch>
-      </Router>
+      </Router> */}
     </>
 
   );

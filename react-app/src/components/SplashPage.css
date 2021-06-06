@@ -1,7 +1,7 @@
 .header {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     text-align: center;
     color: white;
     font-family: Helvetica;
@@ -14,4 +14,9 @@
     background-size: cover;
     width: 100vw;
     height: 100vh;
+}
+
+.header-name {
+    display: flex;
+    justify-content: center;
 }
