@@ -14,8 +14,6 @@ function Matches() {
     console.log(allUsers);
     console.log(allMatches);
 
-    const checkAllMatches =
-
     useEffect(() => {
         if (sessionUser) {
             dispatch(getAllMatches());
