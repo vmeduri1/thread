@@ -49,7 +49,6 @@ function TinderCards() {
 
     return (
         <div>
-            <h1>Tinder cards</h1>
 
             <div className='tinderCards__cardContainer'>
                 {allUsers[0]?.users.map((person, idx) => (

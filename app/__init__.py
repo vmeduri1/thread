@@ -48,6 +48,7 @@ CORS(app)
 
 @app.before_request
 def https_redirect():
+    print(app.url_map)
     if os.environ.get('FLASK_ENV') == 'production':
         if request.headers.get('X-Forwarded-Proto') == 'http':
             url = request.url.replace('http://', 'https://', 1)
@@ -57,6 +58,7 @@ def https_redirect():
 
 @app.after_request
 def inject_csrf_token(response):
+    print("we're here")
     response.set_cookie('csrf_token',
                         generate_csrf(),
                         secure=True if os.environ.get(
