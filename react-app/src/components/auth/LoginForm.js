@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, useLocation } from "react-router-dom";
 import { login } from "../../store/session";
+import './LoginForm.css'
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -9,6 +10,8 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+
+  let location = useLocation();
 
   const onLogin = async (e) => {
     e.preventDefault();
@@ -26,8 +29,8 @@ const LoginForm = () => {
     setPassword(e.target.value);
   };
 
-  if (user) {
-    return <Redirect to="/" />;
+  if (user && location.pathname === '/' ) {
+    return <Redirect to="/tinder-cards" />;
   }
 
   return (
@@ -38,7 +41,6 @@ const LoginForm = () => {
         ))}
       </div>
       <div>
-        <label htmlFor="email">Email</label>
         <input
           name="email"
           type="text"
@@ -48,7 +50,6 @@ const LoginForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="password">Password</label>
         <input
           name="password"
           type="password"
@@ -56,7 +57,9 @@ const LoginForm = () => {
           value={password}
           onChange={updatePassword}
         />
-        <button type="submit">Login</button>
+      </div>
+      <div>
+        <button className="login-btn" type="submit">Login</button>
       </div>
     </form>
   );

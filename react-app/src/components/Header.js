@@ -10,11 +10,12 @@ function Header() {
     return (
         // BEM
         <div className='header'>
-            <IconButton>
-                <Link to="/">
-                    <PersonIcon className='header___icon' fontSize='large'/>
-                </Link>
-            </IconButton>
+            <Link to="/profile">
+                <IconButton>
+                        <PersonIcon className='header___icon' fontSize='large'/>
+                </IconButton>
+            </Link>
+
             <Link to ="/tinder-cards">
                 <img
                     className='header___logo'
