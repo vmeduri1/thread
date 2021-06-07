@@ -5,3 +5,13 @@
     flex-direction: column;
 
 }
+
+.edit-form {
+    margin: auto;
+    width: 50%;
+}
+
+.edit-button {
+    margin: auto;
+    width: 50%;
+}

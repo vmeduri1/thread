@@ -9,3 +9,4 @@ tinder_card_routes = Blueprint('users', __name__)
 def users():
     users = User.query.all()
     return {"users": [user.to_dict() for user in users]}
+

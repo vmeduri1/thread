@@ -5,6 +5,11 @@ const findUsers = (users) => ({
     payload: users
 })
 
+const updateUsers = (user) => ({
+    type: 'UPDATE_USER',
+    payload: user
+})
+
 export const getAllUsers = () => async (dispatch) => {
     const response = await fetch(`/api/users/`)
 
@@ -20,7 +25,7 @@ export const getAllUsers = () => async (dispatch) => {
     return users
 }
 
-export const getOneUserById = () => async (dispatch) => {
+export const getOneUserById = (id) => async (dispatch) => {
     const response = await fetch(`/api/users/${id}`)
 
     if (!response.ok) {
@@ -35,10 +40,35 @@ export const getOneUserById = () => async (dispatch) => {
     return user;
 }
 
+export const updateUser = ({ id, f_name, username, l_name, email, profile_pic, phone_number }) => async (dispatch) => {
+    console.log('We hit this!')
+    const response = await fetch(`/api/users/`, {
+                                                method: 'PUT',
+                                                headers: {'Content-Type': 'application/json'},
+                                                body: JSON.stringify({ id, f_name, username, l_name, email, profile_pic, phone_number })
+                                            })
+    if (!response.ok) {
+        const errors = await response.json()
+        console.log(errors)
+        return { errors }
+    }
+    const user = await response.json()
+
+    dispatch(updateUser(user))
+
+    return user;
+
+}
+
 
 export default function userReducer(state = {}, action) {
     switch (action.type) {
         case 'FETCH_USERS':
+            return {
+                ...state,
+                users: action.payload
+            }
+        case 'UPDATE_USERS':
             return {
                 ...state,
                 users: action.payload
