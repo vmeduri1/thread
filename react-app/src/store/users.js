@@ -54,7 +54,7 @@ export const updateUser = ({ id, f_name, username, l_name, email, profile_pic, p
     }
     const user = await response.json()
 
-    dispatch(updateUser(user))
+    dispatch(updateUsers(user))
 
     return user;
 
