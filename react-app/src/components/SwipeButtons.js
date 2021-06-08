@@ -12,7 +12,7 @@ const SwipeButtons = () => {
                 <CloseIcon fontSize="large" />
             </IconButton>
             <IconButton className="swipeButtons__right">
-                <FavoriteIcon fontsize="large" />
+                <FavoriteIcon fontSize="large" />
             </IconButton>
         </div>
     )
