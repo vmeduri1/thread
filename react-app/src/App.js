@@ -6,9 +6,8 @@ import Header from './components/Header';
 import TinderCards from './components/TinderCards';
 import Matches from './components/Matches';
 import SwipeButtons from './components/SwipeButtons'
-import LoginPage from './components/LoginPage';
+import SplashPage from './components/SplashPage';
 import Profile from './components/Profile';
-import Footer from './components/Footer'
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -34,22 +33,19 @@ function App() {
             <Route path="/matches">
               <Header />
               <Matches />
-              <Footer />
+              <h1>I am the matches page</h1>
             </Route>
             <Route path="/tinder-cards">
               <Header />
               <TinderCards />
               <SwipeButtons />
-              <Footer />
             </Route>
             <Route path='/profile'>
               <Header />
               <Profile />
-              <Footer />
             </Route>
             <Route path="/">
-              <LoginPage />
-              <Footer />
+              <SplashPage />
             </Route>
         </Switch>
         </Router>
