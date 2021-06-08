@@ -44,7 +44,7 @@ const Profile = () => {
                 <div>Username: {sessionUser.username}</div>
                 <div>Last name: {sessionUser.l_name}</div>
                 <div>Email: {sessionUser.email} </div>
-                <div>Profile Pic: {sessionUser.profile_pic}</div>
+                <img className="profile-pic"src={sessionUser.profile_pic}></img>
                 <div>Phone Number: {sessionUser.phone_number}</div>
             </>
             :   <div></div> }
