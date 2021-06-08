@@ -62,6 +62,7 @@ export const authenticate = () => async (dispatch) => {
 
 
   export const signUp = ( username, email, password, f_name, profile_pic) => async (dispatch)  => {
+    console.log('We hit the signUp thunk!')
     console.log(username, email, f_name, password)
     const response = await fetch("/api/auth/signup", {
       method: "POST",
@@ -78,6 +79,7 @@ export const authenticate = () => async (dispatch) => {
     });
     const data = await response.json();
     if (data.errors) {
+        console.log(data.errors);
         return data;
     }
 
