@@ -81,12 +81,13 @@ const Profile = () => {
                         onChange={e => setPhoneNumber(e.target.value)}
                     ></input>
                 </div>
-                <div>
-                    <button className="edit-button" type="submit" onClick={handleSubmit}>Edit Profile</button>
+                <div className="edit-btn">
+                    <button type="submit" onClick={handleSubmit}>Edit Profile</button>
                 </div>
             </form>
-
-            <LogOutButton />
+            <div className="logout-btn">
+                <LogOutButton />
+            </div>
         </div>
 
     )

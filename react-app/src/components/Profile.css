@@ -11,7 +11,12 @@
     width: 50%;
 }
 
-.edit-button {
+.edit-btn {
+    margin: auto;
+    width: 50%;
+}
+
+.logout-btn {
     margin: auto;
     width: 50%;
 }
