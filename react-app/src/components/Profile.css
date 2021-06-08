@@ -20,3 +20,8 @@
     margin: auto;
     width: 50%;
 }
+
+.profile-pic {
+    border-radius: 50%;
+    height: 220px;
+}
