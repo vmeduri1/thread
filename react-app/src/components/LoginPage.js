@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import './SplashPage.css';
+import './LoginPage.css';
 import LoginForm from './auth/LoginForm';
 import SignUpForm from './auth/SignUpForm';
 
-function SplashPage() {
+function LoginPage() {
     const [activeView, setActiveView] = useState('sign-in')
 
     return (
@@ -12,7 +12,7 @@ function SplashPage() {
                     <div className='logo'>
                         Thread
                     </div>
-                    <div className="splashpage-body">
+                    <div className="login-page-body">
                         <div className="auth-view-switcher">
                             <div className={"auth-view-link " + (activeView === 'sign-in' ? 'active' : '')} onClick={(e) => setActiveView('sign-in')}>Sign In</div>
                             <div className={"auth-view-link " + (activeView === 'sign-up' ? 'active' : '')} onClick={(e) => setActiveView('sign-up')}>Sign Up</div>
@@ -29,4 +29,4 @@ function SplashPage() {
     )
 }
 
-export default SplashPage
+export default LoginPage
