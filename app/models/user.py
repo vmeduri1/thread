@@ -43,6 +43,6 @@ class User(db.Model, UserMixin):
       "l_name": self.l_name,
       "username": self.username,
       "profile_pic": self.profile_pic,
-      "phone_number": float(self.phone_number),
+      "phone_number": float(self.phone_number) if self.phone_number else 0,
       "email": self.email
     }

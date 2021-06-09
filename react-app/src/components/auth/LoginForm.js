@@ -29,7 +29,7 @@ const LoginForm = () => {
     setPassword(e.target.value);
   };
 
-  if (user && location.pathname === '/' ) {
+  if (user) {
     return <Redirect to="/tinder-cards" />;
   }
 

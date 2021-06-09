@@ -8,7 +8,8 @@ import Matches from './components/Matches';
 import SwipeButtons from './components/SwipeButtons'
 import LoginPage from './components/LoginPage';
 import Profile from './components/Profile';
-import Footer from './components/Footer'
+import Footer from './components/Footer';
+import SplashPage from './components/SplashPage';
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -47,8 +48,12 @@ function App() {
               <Profile />
               <Footer />
             </Route>
-            <Route path="/">
+            <Route path="/login">
               <LoginPage />
+              <Footer />
+            </Route>
+            <Route path="/">
+              <SplashPage />
               <Footer />
             </Route>
         </Switch>

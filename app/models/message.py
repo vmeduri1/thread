@@ -18,3 +18,4 @@ class Message(db.Model):
             "recipients": self.recipient_id,
             "content": self.content
         }
+ 

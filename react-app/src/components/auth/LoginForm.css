@@ -21,4 +21,5 @@ input {
     border-width: 1px;
     border-color: black;
     margin: 0;
+    cursor: pointer;
 }
