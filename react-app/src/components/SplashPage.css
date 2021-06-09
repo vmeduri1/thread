@@ -1,0 +1,34 @@
+.thread-container {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Tsunami_by_hokusai_19th_century.jpg');
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    position: absolute;
+}
+
+.thread-logo-div {
+    position: relative;
+    top: 25%;
+    left: 64%;
+}
+
+.thread-logo {
+    font-family: 'Pacifico', cursive;
+    color: #1C3A5C;
+    font-size: 120px;
+    width: 200px;
+}
+
+.login {
+    position: relative;
+}
+
+a.login-btn {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    right: -4%;
+    width: 240px;
+    text-decoration: none;
+}

@@ -27,11 +27,12 @@ function Matches() {
                 <>
                     {/* <div>{match.user_a.profile_pic}</div> */}
                     <div key={idx}>
-                        {allUsers[0]?.users.map((user, idx) => (
+                        {allUsers[0]?.users?.map((user, idx) => (
                             <div className="matches" key={idx}>
                                 {(match.users_b === user.id) ? <div>
                                     <img className="img-profile-pic" src={user.profile_pic} />
                                     <div className="user-details">
+                                        <h2>{user.phone_number}</h2>
                                         <h2>{user.f_name}</h2>
                                         <p>{user.username}</p>
                                     </div>

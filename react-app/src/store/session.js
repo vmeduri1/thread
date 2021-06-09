@@ -78,13 +78,13 @@ export const authenticate = () => async (dispatch) => {
       }),
     });
     const data = await response.json();
-    if (data.errors) {
+    if (data?.errors) {
         console.log(data.errors);
         return data;
     }
 
     dispatch(setUser(data))
-    return {};
+
   }
 
 export default function reducer(state=initialState, action) {
