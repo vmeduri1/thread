@@ -27,13 +27,13 @@ def authenticate():
         return current_user.to_dict()
     return {'errors': ['Unauthorized']}
 
-
 @auth_routes.route('/login', methods=['POST'])
 def login():
     """
     Logs a user in
     """
     form = LoginForm()
+    print('We got here!')
     print(request.get_json())
     # Get the csrf_token from the request cookie and put it into the
     # form manually to validate_on_submit can be used

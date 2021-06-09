@@ -16,6 +16,7 @@ const Profile = () => {
     const [emailInput, setEmail] = useState(sessionUser ? sessionUser.email : '')
     const [profilePic, setProfilePic] = useState(sessionUser ? sessionUser.profile_pic : '')
     const [phoneNumber, setPhoneNumber] = useState(sessionUser ? sessionUser.phone_number : '')
+    const [user, setUser] = useState(sessionUser ? sessionUser : '')
 
     useEffect(() => {
         if (sessionUser) {
@@ -32,7 +33,8 @@ const Profile = () => {
         const email = emailInput
         const profile_pic = profilePic
         const phone_number = phoneNumber
-        dispatch(updateUser({ id, f_name, username, l_name, email, profile_pic, phone_number }))
+        const user = dispatch(updateUser({ id, f_name, username, l_name, email, profile_pic, phone_number }))
+        setUser()
     }
 
     return (
@@ -52,32 +54,32 @@ const Profile = () => {
                 <div className="edit-form">
                     <input
                         placeholder='First Name'
-                        value={firstName}
+                        value={firstName || ''}
                         onChange={e => setF_name(e.target.value)}
                     ></input>
                     <input
                         placeholder='Username'
-                        value={userName}
+                        value={userName || ''}
                         onChange={e => setUsername(e.target.value)}
                     ></input>
                     <input
                         placeholder='Last Name'
-                        value={lastName}
+                        value={lastName || ''}
                         onChange={e => setL_name(e.target.value)}
                     ></input>
                     <input
                         placeholder='Email'
-                        value={emailInput}
+                        value={emailInput || ''}
                         onChange={e => setEmail(e.target.value)}
                     ></input>
                     <input
                         placeholder='Profile Pic'
-                        value={profilePic}
+                        value={profilePic || ''}
                         onChange={e => setProfilePic(e.target.value)}
                     ></input>
                     <input
                         placeholder='Phone Number'
-                        value={phoneNumber}
+                        value={phoneNumber || ''}
                         onChange={e => setPhoneNumber(e.target.value)}
                     ></input>
                 </div>
