@@ -23,3 +23,17 @@ input {
     margin: 0;
     cursor: pointer;
 }
+
+.demo-login-btn {
+    border-radius: 100px;
+    background-color: #030bfc;
+    width: 50vw;
+    padding: 12px;
+    border: none;
+    color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    margin: 0;
+    cursor: pointer;
+}

@@ -97,11 +97,11 @@ function Matches() {
                         <div className="user-details" key={idx1}>
                             {allUsers[0]?.users?.map((user, idx2) => (
                                 <div className="user-matches-div  " key={idx2}>
-                                    {user.id === match && match !== sessionUser.id ? <div>
+                                    {user.id === match && match !== sessionUser.id ? <div key={user.id}>
                                         <>
                                             <img key={user.id} className="img-profile-pic" src={user.profile_pic} />
-                                            <p key={user.username}>{user.username}</p>
-                                            <h2 key={user.f_name}>{user.f_name}</h2>
+                                            <p key={user.f_name}>{user.f_name}</p>
+                                            <h2 key={user.username}>{user.username}</h2>
                                             <h2 key={user.phone_number}>{user.phone_number}</h2>
                                         </>
                                         </div>
