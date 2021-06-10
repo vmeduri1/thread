@@ -38,7 +38,7 @@ def updateProfile():
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         user = User.query.get(current_user.id)
-        user.f_name = form.data['username']
+        user.username = form.data['username']
         user.f_name=form.data['f_name'],
         user.l_name=form.data['l_name'],
         user.email=form.data['email'],
