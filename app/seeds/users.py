@@ -18,42 +18,42 @@ def seed_users():
 
     db.session.add(markZuckerberg)
 
-    hieu = User(username='hieu', email='hieu@hieu.com', f_name='Hieu', password='hotdog',
+    hieu = User(username='hieu', email='hieu@hieu.com', f_name='Hieu', hashed_password=generate_password_hash('hotdog'),
                 profile_pic='https://res.cloudinary.com/dn2tap8j5/image/upload/v1622679361/second_degree/Screen_Shot_2021-06-02_at_7.14.04_PM_ia4p4w.png', phone_number=1)
 
     db.session.add(hieu)
 
-    steveJobs = User(username='Jobs', email='steve@apple.com', f_name='Steve', password='hotdog',
+    steveJobs = User(username='Jobs', email='steve@apple.com', f_name='Steve', hashed_password=generate_password_hash('hotdog'),
                     profile_pic='https://battleinvestmentgroup.com/wp-content/uploads/2020/10/Steve_Jobs.jpg', phone_number=1)
 
     db.session.add(steveJobs)
 
-    whitneyHouston = User(username='Whitney', email='whitney@gmail.com', f_name='Whitney', password='hotdog',
+    whitneyHouston = User(username='Whitney', email='whitney@gmail.com', f_name='Whitney', hashed_password=generate_password_hash('hotdog'),
                         profile_pic='https://dazedimg-dazedgroup.netdna-ssl.com/2435/azure/dazed-prod/1290/8/1298649.jpg', phone_number=1)
 
     db.session.add(whitneyHouston)
 
-    billieEilish = User(username='Billie', email='billie@gmail.com', f_name='Billie', password='hotdog',
+    billieEilish = User(username='Billie', email='billie@gmail.com', f_name='Billie', hashed_password=generate_password_hash('hotdog'),
                         profile_pic='https://static.billboard.com/files/media/Billie-Eilish-press-photo-2017-billboard-1548-768x433.jpg', phone_number=1)
 
     db.session.add(billieEilish)
 
-    duaLipa = User(username='Dua', email='dualipa@gmail.com', f_name='Dua', password='hotdog',
+    duaLipa = User(username='Dua', email='dualipa@gmail.com', f_name='Dua', hashed_password=generate_password_hash('hotdog'),
                 profile_pic='https://yt3.ggpht.com/ytc/AAUvwnhDZXpXUoc7YNL7h7j6Y4o6lZnEPuWDy2lbuBO4NQ=s900-c-k-c0x00ffffff-no-rj', phone_number=1)
 
     db.session.add(duaLipa)
 
-    camilaCabello = User(username='Camila', email="camila@gmail.com", f_name='Camila', password='hotdog',
+    camilaCabello = User(username='Camila', email="camila@gmail.com", f_name='Camila', hashed_password=generate_password_hash('hotdog'),
                     profile_pic='https://static.billboard.com/files/media/Camila-Cabello-press-by-Amanda-Charchian-2020-billboard-1548-compressed.jpg', phone_number=1)
 
     db.session.add(camilaCabello)
 
-    barackObama = User(username='Barack', email='barack@whitehouse.gov', f_name='Barry-O', password='hotdog',
+    barackObama = User(username='Barack', email='barack@whitehouse.gov', f_name='Barry-O', hashed_password=generate_password_hash('hotdog'),
                     profile_pic='https://static01.nyt.com/images/2021/06/03/opinion/03klein-lead/03klein-lead-jumbo-v2.jpg?quality=90&auto=webp', phone_number=1)
 
     db.session.add(barackObama)
 
-    sia = User(username='sia', email='sia@music.com', f_name='Sia', password='hotdog',
+    sia = User(username='sia', email='sia@music.com', f_name='Sia', hashed_password=generate_password_hash('hotdog'),
             profile_pic='https://images.toofab.com/image/07/o/2020/01/13/0718feb83731518da4892d3dcba227fb_md.jpg', phone_number=1)
 
     db.session.add(sia)
@@ -62,7 +62,7 @@ def seed_users():
                 profile_pic='https://upload.wikimedia.org/wikipedia/commons/8/85/Elon_Musk_Royal_Society_%28crop1%29.jpg', phone_number=1)
     db.session.add(elon)
 
-    b = User(username='b', email='b@salinas.com', f_name='b', password='hotdog',
+    b = User(username='b', email='b@salinas.com', f_name='b', hashed_password=generate_password_hash('hotdog'),
             profile_pic='https://res.cloudinary.com/dn2tap8j5/image/upload/v1623188778/second_degree/Screen_Shot_2021-06-08_at_4.45.44_PM_hnunoi.png', phone_number=1)
     db.session.add(b)
 

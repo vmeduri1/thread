@@ -19,6 +19,22 @@ class User(db.Model, UserMixin):
   matches_a = db.relationship("Match", back_populates="users_a", primaryjoin=(id==Match.match_a))
   matches_b = db.relationship("Match", back_populates="users_b", primaryjoin=(id==Match.match_b))
 
+  usersSwipedOn = db.relationship(
+                                  "User",
+                                  secondary="matches",
+                                  primaryjoin=(id==Match.match_a),
+                                  secondaryjoin=(id==Match.match_b),
+                                  # backref=db.backref("swipedOnCurrentUser", lazy="dynamic"),
+                                  lazy="dynamic")
+
+  swipedOnCurrentUser = db.relationship(
+                                    "User",
+                                    secondary="matches",
+                                    primaryjoin=(id==Match.match_b),
+                                    secondaryjoin=(id==Match.match_a),
+                                    # backref=db.backref("swipedOnCurrentUser", lazy="dynamic"),
+                                    lazy="dynamic")
+
   user_senders = db.relationship("Message", back_populates="senders", primaryjoin=(id==Message.sender_id))
   user_recipients = db.relationship("Message", back_populates="recipients", primaryjoin=(id==Message.recipient_id))
 
@@ -44,5 +60,7 @@ class User(db.Model, UserMixin):
       "username": self.username,
       "profile_pic": self.profile_pic,
       "phone_number": float(self.phone_number) if self.phone_number else 0,
-      "email": self.email
+      "email": self.email,
+      "usersSwipedOn": [user.id for user in self.usersSwipedOn],
+      "swipedOnCurrentUser": [user.id for user in self.swipedOnCurrentUser]
     }
