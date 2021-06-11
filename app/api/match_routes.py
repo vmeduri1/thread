@@ -20,3 +20,4 @@ def addMatch():
     db.session.commit()
     matches = Match.query.all()
     return {"matches": [match.to_dict() for match in matches]}
+

@@ -66,6 +66,18 @@ def seed_users():
             profile_pic='https://res.cloudinary.com/dn2tap8j5/image/upload/v1623188778/second_degree/Screen_Shot_2021-06-08_at_4.45.44_PM_hnunoi.png', phone_number=1)
     db.session.add(b)
 
+    christian = User(username='christian', email='christian@christian.com', f_name="Christian", hashed_password=generate_password_hash('hotdog'),
+                profile_pic='https://avatars.githubusercontent.com/u/70053396?v=4')
+    db.session.add(christian)
+
+    jonathan = User(username='jonathan', email='jonathan@chan.com', f_name="Jonathan", hashed_password=generate_password_hash('hotdog'),
+                profile_pic='https://avatars.githubusercontent.com/u/70030725?v=4')
+    db.session.add(jonathan)
+
+    schuler = User(username='schulerusa', email='schulerusa@gmail.com', f_name="Schuler", hashed_password=generate_password_hash('hotdog'),
+                profile_pic='https://res.cloudinary.com/dn2tap8j5/image/upload/v1623362087/second_degree/122599574_1058601091220333_7459480928284465933_n_unsnru.jpg')
+    db.session.add(schuler)
+
     db.session.commit()
 
 # Uses a raw SQL query to TRUNCATE the users table.
