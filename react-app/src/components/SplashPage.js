@@ -10,6 +10,10 @@ const SplashPage = () => {
                 <div className="login">
                     <a className="login-btn" href="/login">Login/Sign up</a>
                 </div>
+                <div className="description">
+                    Thread is an app designed around the fact that friends meet friends through friends, so Thread!
+                    Welcome to, Thread!
+                </div>
             </div>
         </div>
     )

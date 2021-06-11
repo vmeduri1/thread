@@ -32,3 +32,15 @@ a.login-btn {
     width: 240px;
     text-decoration: none;
 }
+
+.description {
+    /* font-family: 'Tahoma'; */
+    position: relative;
+    right: 50%;
+    top: 10px;
+    background-color: white;
+    width: 375px;
+    overflow-wrap: break-word;
+    font-size: 25px;
+    border: 1px solid black;
+}

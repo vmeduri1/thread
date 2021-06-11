@@ -18,6 +18,10 @@ export const getAllMatches = () => async (dispatch) => {
     // return matches
 }
 
+// export const seen = (id) => async (dispatch) => {
+//     const response = await fetch(`/api/matches/`)
+// }
+
 export const addingSwipe = (id) => async (dispatch) => {
     const response = await fetch(`/api/matches/`, { headers: {'Content-Type': 'application/json'},
                                                     method : 'POST',

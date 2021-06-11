@@ -24,6 +24,7 @@ const Profile = () => {
         }
     }, [dispatch, sessionUser])
 
+
     const handleSubmit = (e) => {
         e.preventDefault()
         const id = sessionUser.id
@@ -33,6 +34,7 @@ const Profile = () => {
         const email = emailInput
         const profile_pic = profilePic
         const phone_number = phoneNumber
+        window.location.reload()
         const user = dispatch(updateUser({ id, f_name, username, l_name, email, profile_pic, phone_number }))
         setUser()
     }

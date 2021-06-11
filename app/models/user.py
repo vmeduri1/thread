@@ -24,7 +24,6 @@ class User(db.Model, UserMixin):
                                   secondary="matches",
                                   primaryjoin=(id==Match.match_a),
                                   secondaryjoin=(id==Match.match_b),
-                                  # backref=db.backref("swipedOnCurrentUser", lazy="dynamic"),
                                   lazy="dynamic")
 
   swipedOnCurrentUser = db.relationship(
@@ -32,7 +31,6 @@ class User(db.Model, UserMixin):
                                     secondary="matches",
                                     primaryjoin=(id==Match.match_b),
                                     secondaryjoin=(id==Match.match_a),
-                                    # backref=db.backref("swipedOnCurrentUser", lazy="dynamic"),
                                     lazy="dynamic")
 
   user_senders = db.relationship("Message", back_populates="senders", primaryjoin=(id==Message.sender_id))

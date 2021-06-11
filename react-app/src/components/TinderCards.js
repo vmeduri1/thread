@@ -6,6 +6,8 @@ import SwipeButtons from '../components/SwipeButtons'
 import './TinderCards.css';
 import { getAllUsers } from '../store/users';
 import { addingSwipe } from '../store/matches';
+import { ContactlessOutlined } from '@material-ui/icons';
+// import { seen } from '../store/matches'
 
 
 
@@ -30,8 +32,15 @@ function TinderCards() {
         console.log(`Swiped ${direction} for ${id}`);
         if (direction === 'right') {
             dispatch(addingSwipe(id))
+            // dispatch(seen(id))
+        // } else if (direction === 'left') {
+        //     dispatch(seen(id))
         }
     }
+
+    const filteredUsers = allUsers[0]?.users?.filter((user) => {
+        return !sessionUser.usersSwipedOn.includes(user.id)
+    })
 
 
     // Piece of codde which runs based on a condition
@@ -47,11 +56,13 @@ function TinderCards() {
         }
     }, [dispatch, sessionUser])
 
+    console.log(filteredUsers)
+
     return (
         <div>
 
             <div className='tinderCards__cardContainer'>
-                {allUsers[0]?.users?.map((person, idx) => (
+                {filteredUsers?.map((person, idx) => (
                     <TinderCard
                         className='swipe'
                         key={idx}
@@ -70,6 +81,7 @@ function TinderCards() {
 
         </div>
     )
+
 }
 
 export default TinderCards
