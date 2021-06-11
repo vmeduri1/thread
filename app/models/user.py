@@ -3,6 +3,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from .match import Match
 from .message import Message
+from .leftSwipes import leftSwipes
 
 class User(db.Model, UserMixin):
   __tablename__ = 'users'
@@ -33,6 +34,14 @@ class User(db.Model, UserMixin):
                                     secondaryjoin=(id==Match.match_a),
                                     lazy="dynamic")
 
+  usersSwipedLeftOn = db.relationship(
+                                      "User",
+                                      secondary=leftSwipes,
+                                      primaryjoin=(leftSwipes.c.user_id == id),
+                                      secondaryjoin=(leftSwipes.c.left_swipes_id == id),
+                                      lazy="dynamic"
+  )
+
   user_senders = db.relationship("Message", back_populates="senders", primaryjoin=(id==Message.sender_id))
   user_recipients = db.relationship("Message", back_populates="recipients", primaryjoin=(id==Message.recipient_id))
 
@@ -60,5 +69,6 @@ class User(db.Model, UserMixin):
       "phone_number": float(self.phone_number) if self.phone_number else 0,
       "email": self.email,
       "usersSwipedOn": [user.id for user in self.usersSwipedOn],
-      "swipedOnCurrentUser": [user.id for user in self.swipedOnCurrentUser]
+      "swipedOnCurrentUser": [user.id for user in self.swipedOnCurrentUser],
+      "usersSwipedLeftOn" : [user.id for user in self.usersSwipedLeftOn]
     }

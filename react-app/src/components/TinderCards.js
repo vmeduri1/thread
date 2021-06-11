@@ -7,7 +7,8 @@ import './TinderCards.css';
 import { getAllUsers } from '../store/users';
 import { addingSwipe } from '../store/matches';
 import { ContactlessOutlined } from '@material-ui/icons';
-// import { seen } from '../store/matches'
+import { seen } from '../store/matches'
+import { getAllMatches } from '../store/matches'
 
 
 
@@ -26,20 +27,27 @@ function TinderCards() {
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user)
     const allUsers = useSelector((state) => Object.values(state.users));
-    console.log(allUsers);
+    const allMatches = useSelector((state) => Object.values(state.matches))
+    console.log(allMatches);
     // const allUsersKeyed = Object.values(allUsers[0])
     const onSwipe = (direction, id) => {
         console.log(`Swiped ${direction} for ${id}`);
         if (direction === 'right') {
             dispatch(addingSwipe(id))
             // dispatch(seen(id))
-        // } else if (direction === 'left') {
-        //     dispatch(seen(id))
+        } else if (direction === 'left') {
+            dispatch(seen(id))
         }
     }
 
+    useEffect(() => {
+        if (sessionUser) {
+            dispatch(getAllMatches());
+        }
+    }, [dispatch, sessionUser])
+
     const filteredUsers = allUsers[0]?.users?.filter((user) => {
-        return !sessionUser.usersSwipedOn.includes(user.id)
+        return !sessionUser.usersSwipedOn.includes(user.id) && !sessionUser.usersSwipedLeftOn.includes(user.id)
     })
 
 
@@ -70,7 +78,7 @@ function TinderCards() {
                         onSwipe={(dir) => onSwipe(dir, person.id)}
                     >
                         <div
-                            style={{ backgroundImage: `url(${person.profile_pic})`}}
+                            style={{ backgroundImage: `url(${person.profile_pic})` }}
                             className='card'
                         >
                             <h3>{person.username}</h3>

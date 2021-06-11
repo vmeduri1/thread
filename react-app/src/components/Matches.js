@@ -12,6 +12,7 @@ function Matches() {
     const sessionUser = useSelector((state) => state.session.user)
     const allMatches = useSelector((state) => Object.values(state.matches))
     const allUsers = useSelector((state) => Object.values(state.users))
+    console.log(allMatches)
 
     useEffect(() => {
         if (sessionUser) {
