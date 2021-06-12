@@ -1,4 +1,5 @@
 .thread-container {
+    display: grid;
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Tsunami_by_hokusai_19th_century.jpg');
     background-size: cover;
     height: 100vh;
@@ -11,6 +12,7 @@
     position: relative;
     top: 25%;
     left: 64%;
+    z-index: 0;
 }
 
 .thread-logo {
@@ -22,25 +24,64 @@
 
 .login {
     position: relative;
+    z-index: 0;
 }
 
-a.login-btn {
+.login-btn-splash-page {
     display: block;
     position: relative;
     text-decoration: none;
     right: -4%;
-    width: 240px;
     text-decoration: none;
+    z-index: 2;
+    border-radius: 100px;
+    background-color: #ca2532;
+    width: 15vw;
+    padding: 12px;
+    border: none;
+    color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    margin: 0;
+    cursor: pointer;
 }
 
 .description {
     /* font-family: 'Tahoma'; */
     position: relative;
-    right: 50%;
-    top: 10px;
+    right: 49%;
+    top: 150px;
     background-color: white;
     width: 375px;
     overflow-wrap: break-word;
     font-size: 25px;
     border: 1px solid black;
+    z-index: 0;
+}
+
+.gif-div {
+    position: relative;
+    z-index: 10;
+    top: 150px;
+    left: 200px;
+    width: 500px;
+}
+
+.gif-img {
+    width: 500px;
+    height: 450px;
+    top: 50%;
+    left: 50px;
+    z-index: -1;
+    border: black solid 1px;
+}
+
+.tagline {
+    position: relative;
+    font-family: 'Pacifico', cursive;
+    color: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);;
+    font-size: 85px;
+    left: 800px;
+    bottom: 350px;
 }

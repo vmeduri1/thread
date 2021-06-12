@@ -86,6 +86,7 @@ function TinderCards() {
                     </TinderCard>
                 ))}
             </div>
+            <SwipeButtons />
 
         </div>
     )
