@@ -13,6 +13,8 @@ def seed_matches():
     mark_demo = Match(match_a=2, match_b=1)
     db.session.add(mark_demo)
 
+
+
     demo_hieu = Match(match_a=1, match_b=3)
     db.session.add(demo_hieu)
 
