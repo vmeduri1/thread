@@ -40,7 +40,6 @@ function App() {
             <Route path="/tinder-cards">
               <Header />
               <TinderCards />
-              <SwipeButtons />
               <Footer />
             </Route>
             <Route path='/profile'>
