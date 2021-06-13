@@ -17,7 +17,7 @@ Thread is inspired by [Tinder](tinder.com).
 <p align="center">
   <a href="#technologies">Technologies</a> 
   · 
-  <a href="#key-features">Key Features</a> 
+  <a href="#Code Highlights/ Challenges">Code Highlights</a> 
   · 
   <a href="#wiki-pages">Wiki Pages</a> 
   ·
@@ -87,7 +87,8 @@ React tinder cards[https://www.npmjs.com/package/react-tinder-card] made the tin
 These cards were added with an onSwipe() function which tracked whether cards were swiped left or right. This technology was valuable because it gauged matches and who else swiped right on you, as well as for filtering for users you already swiped through, as stated above.
 
 ## Future Implementations
--Search Matches
--Web Sockets for Messaging
--Connect to Facebook or host on AWS
+*Search Matches
+*Web Sockets for Messaging
+*Connect to Facebook or host on AWS
 
+- [@vmeduri1](https://github.com/vmeduri1) 🏄🏾
