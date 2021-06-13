@@ -86,7 +86,7 @@ const Profile = () => {
                     ></input>
                 </div>
                 <div className="edit-btn">
-                    <button type="submit" onClick={handleSubmit}>Edit Profile</button>
+                    <button type="submit" className="edit-button" onClick={handleSubmit}>Edit Profile</button>
                 </div>
             </form>
             <div className="logout-btn">
