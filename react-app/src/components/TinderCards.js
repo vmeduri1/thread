@@ -86,7 +86,7 @@ function TinderCards() {
                     </TinderCard>
                 ))}
             </div>
-            <SwipeButtons />
+            {/* <SwipeButtons /> */}
 
         </div>
     )
