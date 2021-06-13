@@ -42,4 +42,52 @@ Thread is inspired by [Tinder](tinder.com).
 - PostgreSQL database
 - SQLAlchemy
 
-## Key Features
+## Code Highlights/ Challenges
+
+Here, we set up a relationship between the user and the users he/she swipes left on. This relationship is important to set up and track because we don't want the users we swiped left on, or right on, to appear in the feed again. These backdooor relationships helped set the prescedent for the current user not to see repeats in the user feed.
+
+```Javascript
+  usersSwipedLeftOn = db.relationship(
+                                      "User",
+                                      secondary=leftSwipes,
+                                      primaryjoin=(leftSwipes.c.user_id == id),
+                                      secondaryjoin=(leftSwipes.c.left_swipes_id == id),
+                                      lazy="dynamic"
+  )
+  usersSwipedOn = db.relationship(
+                                  "User",
+                                  secondary="matches",
+                                  primaryjoin=(id==Match.match_a),
+                                  secondaryjoin=(id==Match.match_b),
+                                  lazy="dynamic")
+```
+
+React tinder cards[https://www.npmjs.com/package/react-tinder-card] made the tinder card swiping technology possible.
+
+```Javascript
+<div className='tinderCards__cardContainer'>
+                {filteredUsers?.map((person, idx) => (
+                    <TinderCard
+                        className='swipe'
+                        key={idx}
+                        preventSwipe={['up', 'down']}
+                        onSwipe={(dir) => onSwipe(dir, person.id)}
+                    >
+                        <div
+                            style={{ backgroundImage: `url(${person.profile_pic})` }}
+                            className='card'
+                        >
+                            <h3>{person.username}</h3>
+                        </div>
+                    </TinderCard>
+                ))}
+</div>
+```
+
+These cards were added with an onSwipe() function which tracked whether cards were swiped left or right. This technology was valuable because it gauged matches and who else swiped right on you, as well as for filtering for users you already swiped through, as stated above.
+
+## Future Implementations
+-Search Matches
+-Web Sockets for Messaging
+-Connect to Facebook or host on AWS
+
