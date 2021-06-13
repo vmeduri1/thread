@@ -91,4 +91,4 @@ These cards were added with an onSwipe() function which tracked whether cards we
 - Web Sockets for Messaging
 - Connect to Facebook or host on AWS
 
-- [@vmeduri1](https://github.com/vmeduri1) 🏄🏾
+[@vmeduri1](https://github.com/vmeduri1) 🏄🏾 No Rights Reserved.
