@@ -4,7 +4,7 @@
 # Thread, another dating app
 ### Live Link: [thread](https://project-second-degree.herokuapp.com/)
 Thread is a dating app designed around that fact that humans meet people through _other people_, most typically their friends. 
-So, _Thread_. Thread was developed around this _thread_ of connection, no pun intended, so people could meet people in a way that was more relational, conscious, and in harmony with the human experience of relationships. Cause we all know _relationaships_ are a blast. But when done well, they could seriously alter the trajectory and quality of your life. 
+So, _Thread_. Thread was developed around this _thread_ of connection, no pun intended, so people could meet people in a way that was more relational, conscious, and in harmony with the human experience of relationships. Cause we all know _relationships_ are a blast. But when done well, they could seriously alter the trajectory and quality of your life. 
 How does Thread do this?
 We only allow people who are second degree friends to you to be on the app. That way you can cultivate your social circle with care, moving your social circle outward, and upping the quality of your relationships.
 Dates are always fun!
