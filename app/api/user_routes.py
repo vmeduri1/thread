@@ -42,7 +42,6 @@ def updateProfile():
         user.f_name=form.data['f_name'],
         user.l_name=form.data['l_name'],
         user.email=form.data['email'],
-        user.password=form.data['password']
         user.profile_pic=form.data['profile_pic']
         user.phone_number=form.data['phone_number']
 
