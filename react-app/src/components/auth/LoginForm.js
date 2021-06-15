@@ -23,7 +23,7 @@ const LoginForm = () => {
 
   const demoSubmit = async (e) => {
     e.preventDefault();
-    const email = "demo@aa.io";
+    const email = "demo1@aa.io";
     const password = "hotdog";
     const data = await dispatch(login(email, password));
     if (data.errors) {
