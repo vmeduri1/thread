@@ -16,6 +16,6 @@ class Message(db.Model):
             "id": self.id,
             "senders": self.sender_id,
             "recipients": self.recipient_id,
-            "content": self.content
+            "content": self.content,
+            "sender_name": self.senders.f_name
         }
- 

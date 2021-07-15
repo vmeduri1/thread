@@ -3,9 +3,10 @@ import thunk from "redux-thunk";
 import session from "./session"
 import users from './users';
 import matchReducer from './matches';
+import messages from './messages';
 
 const rootReducer = combineReducers({
-    session, users, matches: matchReducer
+    session, users, matches: matchReducer, messages
 });
 
 

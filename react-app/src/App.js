@@ -10,6 +10,8 @@ import LoginPage from './components/LoginPage';
 import Profile from './components/Profile';
 import Footer from './components/Footer';
 import SplashPage from './components/SplashPage';
+import Chat from './components/Chat';
+import Channel from './components/Channel';
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -35,25 +37,29 @@ function App() {
             <Route path="/matches">
               <Header />
               <Matches />
-              <Footer />
+              {/* <Footer /> */}
+            </Route>
+            <Route path = "/messages/:id">
+              <Header />
+              <Channel />
             </Route>
             <Route path="/tinder-cards">
               <Header />
               <TinderCards />
-              <Footer />
+              {/* <Footer /> */}
             </Route>
             <Route path='/profile'>
               <Header />
               <Profile />
-              <Footer />
+              {/* <Footer /> */}
             </Route>
             <Route path="/login">
               <LoginPage />
-              <Footer />
+              {/* <Footer /> */}
             </Route>
             <Route path="/">
               <SplashPage />
-              <Footer />
+              {/* <Footer /> */}
             </Route>
         </Switch>
         </Router>
