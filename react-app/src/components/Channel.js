@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { getAllMessages } from '../store/messages';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Chat from './Chat';
@@ -9,7 +9,7 @@ const Channel = function () {
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user)
     const allMessages = useSelector((state) => state.messages)
-    console.log(allMessages);
+
     const params = useParams();
     const recipient_id = params;
     // console.log(recipient_id);
@@ -19,6 +19,7 @@ const Channel = function () {
     for (let key in allMessages) {
         messagesArr.push(allMessages[key])
     }
+    const [messages, setMessages] = useState(messagesArr);
 
     useEffect(() => {
         if (sessionUser) {
@@ -31,7 +32,7 @@ const Channel = function () {
             {messagesArr.map((message, idx) => (
                 <p key={idx}>{message.sender_name}:{message.content}</p>
             ))}
-            <Chat sender_id={sessionUser.id} recipient_id={recipient_id}/>
+            <Chat sender_id={sessionUser.id} recipient_id={recipient_id} messages={messages} setMessages={setMessages}/>
         </div>
     )
 }

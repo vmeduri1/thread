@@ -1,29 +1,38 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { postMessage } from "../store/messages";
+import { postMessage, postMessageToStore } from "../store/messages";
 import { io } from 'socket.io-client';
 
 let socket;
 
-const Chat = ({ sender_id, recipient_id }) => {
+const Chat = ({ sender_id, recipient_id, messages, setMessages }) => {
     // const [chatInput, setChatInput] = useState("");
-    const [messages, setMessages] = useState([]);
+    // const [messages, setMessages] = useState([]);
     const user = useSelector(state => state.session.user)
     const [content, setChatInput] = useState("");
 
-    // useEffect(() => {
-    //     // open socket connection
-    //     // create websocket
-    //     socket = io();
-
-    //     socket.on("chat", (chat) => {
-    //         setMessages(messages => [...messages, chat])
-    //     })
-    //     // when component unmounts, disconnect
-    //     return (() => {
-    //         socket.disconnect()
-    //     })
-    // }, [])
+    useEffect(() => {
+        // open socket connection
+        // create websocket
+        socket = io();
+        let channel_id;
+        console.log(sender_id, recipient_id?.id, 'SENDERS AND RECIPIENTS');
+        if (sender_id < recipient_id?.id) {
+            channel_id = `${sender_id}_${recipient_id?.id}`
+        } else {
+            channel_id = `${recipient_id?.id}_${sender_id}`
+        }
+        socket.on(channel_id, (chat) => {
+            console.log(chat, 'CHAT');
+            // setMessages(messages => [...messages, chat])
+            dispatch(postMessageToStore(chat))
+        })
+        console.log(channel_id, 'FRONTEND CHANNEL_ID');
+        // when component unmounts, disconnect
+        return (() => {
+            socket.disconnect()
+        })
+    }, [])
 
     const dispatch = useDispatch()
 
@@ -42,8 +51,10 @@ const Chat = ({ sender_id, recipient_id }) => {
     // }
     const sendChat = (e) => {
         e.preventDefault();
-        // console.log(content, 'CCOOOONNNNTTTTEEENNNNTTT');
-        dispatch(postMessage(sender_id, recipient_id.id, content));
+        console.log('Entered sendChat', { sender_id: sender_id, recipient_id: recipient_id.id, content: content });
+        // dispatch(postMessage(sender_id, recipient_id.id, content));
+        socket.emit('chat', { sender_id: sender_id, recipient_id: recipient_id.id, content: content })
+        setChatInput('');
     }
 
     return (user && (

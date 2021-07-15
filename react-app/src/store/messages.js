@@ -1,4 +1,4 @@
-const postMessageToStore = (message) => ({
+export const postMessageToStore = (message) => ({
     type: 'POST_MESSAGE_TO_STORE',
     payload: message
 })
@@ -9,7 +9,7 @@ const findMessages = (messages) => ({
 })
 
 export const getAllMessages = ({ id }) => async (dispatch) => {
-    console.log(id, 'WAZZZZZUUUUP');
+    // console.log(id, 'WAZZZZZUUUUP');
     const response = await fetch(`/api/messages/${id}/`)
 
     if (!response.ok) {
@@ -18,7 +18,7 @@ export const getAllMessages = ({ id }) => async (dispatch) => {
     }
 
     const messages = await response.json()
-    console.log(messages, 'HIIIIIIIIIIII')
+    // console.log(messages, 'HIIIIIIIIIIII')
 
     dispatch(findMessages(messages.messages))
 }
