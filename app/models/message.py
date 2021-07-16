@@ -1,3 +1,4 @@
+import datetime
 from .db import db
 
 class Message(db.Model):
@@ -7,6 +8,7 @@ class Message(db.Model):
     sender_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     recipient_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     content = db.Column(db.String(500))
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.datetime.now())
 
     senders = db.relationship("User", foreign_keys=[sender_id], back_populates="user_senders")
     recipients = db.relationship("User", foreign_keys=[recipient_id], back_populates="user_recipients")
