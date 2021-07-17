@@ -10,6 +10,8 @@ import LoginPage from './components/LoginPage';
 import Profile from './components/Profile';
 import Footer from './components/Footer';
 import SplashPage from './components/SplashPage';
+import Chat from './components/Chat';
+import Channel from './components/Channel';
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -36,6 +38,10 @@ function App() {
               <Header />
               <Matches />
               <Footer />
+            </Route>
+            <Route path = "/messages/:id">
+              <Header />
+              <Channel />
             </Route>
             <Route path="/tinder-cards">
               <Header />

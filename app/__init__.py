@@ -12,6 +12,8 @@ from .api.tinder_card_routes import tinder_card_routes
 from .api.match_routes import match_routes
 from .api.user_routes import user_routes
 from .api.seen_routes import seen_routes
+from .api.message_routes import message_routes
+from .socket import socketio
 
 from .seeds import seed_commands
 
@@ -37,9 +39,11 @@ app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(match_routes, url_prefix='/api/matches')
 app.register_blueprint(seen_routes, url_prefix='/api/seen')
+app.register_blueprint(message_routes, url_prefix='/api/messages')
 # app.register_blueprint(user_routes, url_prefix='/api/users')
 db.init_app(app)
 Migrate(app, db)
+socketio.init_app(app)
 
 # Application Security
 CORS(app)
@@ -62,7 +66,6 @@ def https_redirect():
 
 @app.after_request
 def inject_csrf_token(response):
-    print("we're here")
     response.set_cookie('csrf_token',
                         generate_csrf(),
                         secure=True if os.environ.get(
@@ -80,3 +83,6 @@ def react_root(path):
     if path == 'favicon.ico':
         return app.send_static_file('favicon.ico')
     return app.send_static_file('index.html')
+
+if __name__ == '__main__':
+    socketio.run(app)

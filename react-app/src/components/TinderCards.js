@@ -28,7 +28,7 @@ function TinderCards() {
     const sessionUser = useSelector((state) => state.session.user)
     const allUsers = useSelector((state) => Object.values(state.users));
     const allMatches = useSelector((state) => Object.values(state.matches))
-    console.log(allMatches);
+
     // const allUsersKeyed = Object.values(allUsers[0])
     const onSwipe = (direction, id) => {
         console.log(`Swiped ${direction} for ${id}`);
