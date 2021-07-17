@@ -28,6 +28,9 @@ Thread is inspired by [Tinder](tinder.com).
 
 <img src="https://media.giphy.com/media/qfpcAEHDJUglvFt2Gi/giphy.gif" width=750px height=480px>
 
+### Messaging and Edit Profile Feature
+<img src="https://res.cloudinary.com/dn2tap8j5/video/upload/v1626561770/Screen_Recording_2021-07-17_at_5.33.31_PM_wqkgls.mov" width=750px height=480px>
+
 ## Technologies
 #### Frontend
 - JavaScript
