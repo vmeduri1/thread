@@ -49,7 +49,6 @@ function Matches() {
                                                 <p key={user.f_name}>{user.f_name}</p>
                                                 <h2 key={user.username}>{user.username}</h2>
                                                 <h2 key={user.phone_number}>{user.phone_number}</h2>
-                                                <Chat/>
                                             </Link>
                                         </>
                                         </div>

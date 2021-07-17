@@ -37,7 +37,7 @@ function App() {
             <Route path="/matches">
               <Header />
               <Matches />
-              {/* <Footer /> */}
+              <Footer />
             </Route>
             <Route path = "/messages/:id">
               <Header />
@@ -46,20 +46,20 @@ function App() {
             <Route path="/tinder-cards">
               <Header />
               <TinderCards />
-              {/* <Footer /> */}
+              <Footer />
             </Route>
             <Route path='/profile'>
               <Header />
               <Profile />
-              {/* <Footer /> */}
+              <Footer />
             </Route>
             <Route path="/login">
               <LoginPage />
-              {/* <Footer /> */}
+              <Footer />
             </Route>
             <Route path="/">
               <SplashPage />
-              {/* <Footer /> */}
+              <Footer />
             </Route>
         </Switch>
         </Router>

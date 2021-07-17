@@ -26,7 +26,7 @@ export const getAllMessages = ({ id }) => async (dispatch) => {
 export const postMessage = (sender_id, recipient_id, content) => async (dispatch) => {
     // console.log(sender_id, recipient_id, content, 'HIIIYYYAA')
     const response = await fetch('/api/messages/', {
-        headers: { 'Content-Type': 'application/json'},
+        headers: { 'Content-Type': 'application/json' },
         method: 'POST',
         body: JSON.stringify({sender_id, recipient_id, content})
     })
