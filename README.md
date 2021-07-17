@@ -34,6 +34,7 @@ Thread is inspired by [Tinder](tinder.com).
 - React / Redux
 - [material-ui](https://material-ui.com/)
 - CSS
+- WebSockets.io
 - Hosted on Heroku and Cloudinary
 
 #### Backend
@@ -88,7 +89,6 @@ These cards were added with an onSwipe() function which tracked whether cards we
 
 ## Future Implementations
 - Search Matches
-- Web Sockets for Messaging
 - Connect to Facebook or host on AWS
 
 [@vmeduri1](https://github.com/vmeduri1) 🏄🏾 No Rights Reserved.
